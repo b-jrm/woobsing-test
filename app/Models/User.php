@@ -30,6 +30,7 @@ class User extends Authenticatable
         'telefono',
         'rol_id',
         'last_auth',
+        'is_twofactor',
     ];
 
     /**

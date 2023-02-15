@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('telefono')->nullable();
             $table->dateTime('last_auth')->nullable();
+            $table->integer('is_twofactor')->default(0);
             $table->unsignedBigInteger('id_rol')->nullable();
             $table->foreign('id_rol')->references('id')->on('roles')->nullOnDelete();
             $table->rememberToken();

@@ -10,7 +10,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("Estas aqui, porque tu última sessión fue abierta el ") }}{{ date('Y-m-d H:i:s', strtotime(Auth::user()->last_auth)) }}, y ha superado las 24 horas sin abrir tu cuenta
                     <br>
-                    <a href="{{ route('welcome') }}" class="underline text-blue-300">-----> Ir al Inicio</a>
+                    <a href="{{ route('welcome') }}" class="underline text-blue-300">-----> {{ __('Go To Home') }}</a>
                 </div>
             </div>
         </div>

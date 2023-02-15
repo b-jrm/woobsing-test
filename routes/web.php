@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\TwoFactorAuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ConnectionController;
 use Illuminate\Support\Facades\Route;
@@ -89,4 +90,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+    
+    Route::post('twofactor/update', [TwoFactorAuthController::class, 'update'])
+                ->name('twofactor.update');
+
 });
