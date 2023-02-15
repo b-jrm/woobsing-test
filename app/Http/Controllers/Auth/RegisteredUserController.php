@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -12,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+
+use App\Models\User;
+use App\Models\Rol;
 
 class RegisteredUserController extends Controller
 {
@@ -42,6 +44,7 @@ class RegisteredUserController extends Controller
             'correo' => $request->correo,
             'password' => Hash::make($request->password),
             'last_auth' => date('Y-m-d H:i:s'),
+            'id_rol' => Rol::select('id')->where('nombre','Invitado')->first()->id ,
         ]);
 
         event(new Registered($user));

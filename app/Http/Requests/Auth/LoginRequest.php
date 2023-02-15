@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
+use Cookie;
+
 class LoginRequest extends FormRequest
 {
     /**
@@ -51,10 +53,9 @@ class LoginRequest extends FormRequest
 
         RateLimiter::clear($this->throttleKey());
 
-        if( $this->ip() === "127.0.0.1" && Auth::user()->rol_id === 1 ){
-            // Crear Cookie
-            dd('Creando Cookie origin_sesion');
-        }
+        // Crear Cookie Origin Session
+        if( $this->ip() === "127.0.0.1" && Auth::user()->id_rol === 1 )
+            Cookie::queue('origin_sesion', Auth::user()->id_rol.'||'.$this->ip(), 30 );
 
     }
 

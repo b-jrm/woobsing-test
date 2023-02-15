@@ -17,4 +17,6 @@ class Rol_permiso extends Model
         'id_rol',
         'id_permiso',
     ];
+
+    public $timestamps = false;
 }

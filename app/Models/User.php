@@ -28,7 +28,7 @@ class User extends Authenticatable
         'correo',
         'password',
         'telefono',
-        'rol_id',
+        'id_rol',
         'last_auth',
         'is_twofactor',
     ];
