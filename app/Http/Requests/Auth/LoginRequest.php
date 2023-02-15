@@ -50,6 +50,12 @@ class LoginRequest extends FormRequest
         }
 
         RateLimiter::clear($this->throttleKey());
+
+        if( $this->ip() === "127.0.0.1" && Auth::user()->rol_id === 1 ){
+            // Crear Cookie
+            dd('Creando Cookie origin_sesion');
+        }
+
     }
 
     /**
