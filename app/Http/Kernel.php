@@ -63,5 +63,8 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        // Middlewares
+        'verified_at' => \App\Http\Middleware\Verified_at::class, // 1.) Si no está verificado mediante el campo email_verified_at, lo redirija a una página /verificación
     ];
 }
