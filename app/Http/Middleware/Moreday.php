@@ -8,9 +8,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-// use Illuminate\View\View;
-
-class Verified_at
+class Moreday
 {
     /**
      * Handle an incoming request.
@@ -19,6 +17,6 @@ class Verified_at
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return ( !empty(Auth::user()->email_verified_at) ? $next($request) : redirect('verificacion') );
+        return ( date('Y-m-d H:i:s', strtotime(Auth::user()->last_auth.' + 1 Days')) < date('Y-m-d H:i:s') ? redirect('sesiones') : $next($request) );
     }
 }

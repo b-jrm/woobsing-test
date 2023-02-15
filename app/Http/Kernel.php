@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
 
         // Middlewares
         'verified_at' => \App\Http\Middleware\Verified_at::class, // 1.) Si no está verificado mediante el campo email_verified_at, lo redirija a una página /verificación
+        'moreday' => \App\Http\Middleware\Moreday::class, // 2.) Si la última sesión del usuario fue hace más de un día lo redirija a una página llamada /sesiones
     ];
 }

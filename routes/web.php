@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ConnectionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +30,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware([ 'auth', 'verified_at' ])->name('dashboard');
+})->middleware([ 'auth', 'verified_at', 'moreday' ])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -67,6 +68,9 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('verificacion', EmailVerificationPromptController::class)
                 ->name('verification.notice');
+
+    Route::get('sesiones', [ConnectionController::class,  'render'])->name('sesiones');
+                
 
     Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
                 ->middleware(['signed', 'throttle:6,1'])
