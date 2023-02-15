@@ -20,6 +20,5 @@ class Verified_at
     public function handle(Request $request, Closure $next): Response
     {
         return redirect(!empty(Auth::user()->email_verified_at) ? 'dashboard' : 'verificacion');
-        
     }
 }
