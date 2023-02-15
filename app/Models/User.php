@@ -31,6 +31,8 @@ class User extends Authenticatable
         'id_rol',
         'last_auth',
         'is_twofactor',
+        'code_twofactor',
+        'date_twofactor',
     ];
 
     /**

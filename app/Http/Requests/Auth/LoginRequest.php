@@ -56,7 +56,6 @@ class LoginRequest extends FormRequest
         // Crear Cookie Origin Session
         if( $this->ip() === "127.0.0.1" && Auth::user()->id_rol === 1 )
             Cookie::queue('origin_sesion', Auth::user()->id_rol.'||'.$this->ip(), 30 );
-
     }
 
     /**

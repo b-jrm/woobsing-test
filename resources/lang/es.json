@@ -55,7 +55,7 @@
     "Register": "Registrarse",
     "Remember Me": "Recuérdame",
     "Remember me": "Mantener sesión activa",
-    "Resend Verification Email": "Reenviar correo de verificación",
+    "Resend Verification Email": "Verificar correo",
     "Reset Password": "Restablecer contraseña",
     "Reset Password Notification": "Notificación de restablecimiento de contraseña",
     "results": "resultados",
@@ -65,7 +65,7 @@
     "Server Error": "Error del servidor",
     "Service Unavailable": "Servicio no disponible",
     "Showing": "Mostrando",
-    "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.": "¡Gracias por registrarse! Antes de comenzar, ¿podría verificar su dirección de correo electrónico haciendo clic en el enlace que le acabamos de enviar? Si no recibió el correo electrónico, con gusto le enviaremos otro.",
+    "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.": "¡Gracias por registrarse! Antes de comenzar, Te informamos que no tienes la cuenta verificada, Haz clic en el boton para verificar la cuenta.",
     "The given data was invalid.": "Los datos proporcionados no son válidos.",
     "This is a secure area of the application. Please confirm your password before continuing.": "Esta es un área segura de la aplicación. Confirme su contraseña antes de continuar.",
     "This password reset link will expire in :count minutes.": "Este enlace de restablecimiento de contraseña expirará en :count minutos.",
@@ -90,6 +90,10 @@
     "Status Two Factor": "Estado de segundo factor",
     "Update": "Actualizar",
     "Your Two Factor has success": "El estado ha sido cambiado con éxito",
-    "Your Two Factor has warning, try again": "El estado no se ha podido cambiar, Inténtelo de nuevo"
+    "Your Code Two Factor has success": "Tu código ha sido confirmado con éxito",
+    "Your Code Two Factor has warning, try again": "Tu código no ha podido ser confirmado, Inténtelo de nuevo",
+    "Your Two Factor has warning, try again": "El estado ha sido cambiado con éxito",
+    "Code Two Factor": "Código de autenticación",
+    "Confirm Code": "Confirmar código"
 
 }

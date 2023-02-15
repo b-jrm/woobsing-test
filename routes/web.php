@@ -67,11 +67,11 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+
     Route::get('verificacion', EmailVerificationPromptController::class)
                 ->name('verification.notice');
 
-    Route::get('sesiones', [ConnectionController::class,  'render'])->name('sesiones');
-                
+    Route::get('sesiones', [ConnectionController::class,  'render'])->name('sesiones');                
 
     Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
                 ->middleware(['signed', 'throttle:6,1'])
@@ -93,5 +93,9 @@ Route::middleware('auth')->group(function () {
     
     Route::post('twofactor/update', [TwoFactorAuthController::class, 'update'])
                 ->name('twofactor.update');
+    
+    Route::get('view_twofactor', [TwoFactorAuthController::class,  'index'])->name('view_twofactor.index');
+
+    Route::post('view_twofactor', [TwoFactorAuthController::class,  'compare'])->name('view_twofactor.compare');
 
 });
